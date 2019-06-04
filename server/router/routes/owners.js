@@ -35,9 +35,9 @@ module.exports = (app, db) => {
   });
 
   // PATCH single owner
-  app.patch('/owners/:id', (req, res) => {
+  app.put('/owners/:id', (req, res) => {
     const id = req.params.id;
-    const updates = req.body.updates;
+    const updates = req.body;
     db.owners.find({
       where: { id: id }
     })
